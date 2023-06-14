@@ -3,13 +3,9 @@ package page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-import java.net.URL;
-import java.util.Arrays;
-import java.util.List;
-
 public class LoginPage {
 
-    private final String URL = "https://www.saucedemo.com/";
+    public static final String URL = "https://www.saucedemo.com/";
     public static final String DEFAULT_PASSWORD = "secret_sauce";
     private WebDriver driver;
 
