@@ -18,12 +18,7 @@ public abstract class Elements extends BaseTest {
     }
 
     public static void waitElement(By element) {
-        Browser.wait.until(
-                ExpectedConditions.or(
-                        ExpectedConditions.presenceOfElementLocated(element),
-                        ExpectedConditions.visibilityOfElementLocated(element)
-                    )
-                );
+        Browser.wait.until(ExpectedConditions.presenceOfElementLocated(element));
     }
 
 

@@ -1,6 +1,7 @@
 package bugbank.pages;
 
 import org.openqa.selenium.*;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.util.List;
 import java.util.Objects;
@@ -26,13 +27,22 @@ public class RegisterPage extends BasePage {
     public static void acessarPagina() {
         driver.get(URL);
     }
-    public static void registrarUsuario(String email, String name, String password, String passwordConfirm) {
+    public static void registrarUsuarioComSaldo(String email, String name, String password, String passwordConfirm) {
         abrirFormularioDeRegistro();
         preencherCampoEmail(email);
         preencherCampoName(name);
         preencherCampoPassword(password);
         preencherCampoPasswordConfirm(passwordConfirm);
         clicarCheckContaComSaldo();
+        clicarBotaoCadastrar();
+    }
+
+    public static void registrarUsuarioSemSaldo(String email, String name, String password, String passwordConfirm) {
+        abrirFormularioDeRegistro();
+        preencherCampoEmail(email);
+        preencherCampoName(name);
+        preencherCampoPassword(password);
+        preencherCampoPasswordConfirm(passwordConfirm);
         clicarBotaoCadastrar();
     }
 
@@ -63,11 +73,9 @@ public class RegisterPage extends BasePage {
     }
 
     public static void clicarCheckContaComSaldo() {
-        try {
-            click(checkContaComSaldo);
-        } catch (ElementClickInterceptedException e) {
-            clicarCheckContaComSaldo();
-        }
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", driver.findElement(checkContaComSaldo));
 
     }
 
@@ -76,12 +84,8 @@ public class RegisterPage extends BasePage {
     }
 
     public static String getTextoModal() {
-        try {
-            return getWithoutWaitText(textoModal);
-        } catch (NoSuchElementException e) {
-            return "";
-        }
-
+        wait.until(ExpectedConditions.visibilityOfElementLocated(textoModal));
+        return getText(textoModal);
     }
 
     public static void fecharModal() {
