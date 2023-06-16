@@ -98,4 +98,24 @@ public class RegisterTest extends BaseTest {
         // Então deve ser exibida a mensagem de erro
         Assert.assertEquals(RegisterPage.getTextoModal(), "As senhas não são iguais.");
     }
+
+    @Test(description = "Teste falhar ao registrar usuário com email já cadastrado.")
+    @Description("Descrição Teste: Validar falha ao registrar usuário com email já cadastrado.")
+    public void testFalharRegistrarUsuarioComEmailJaCadastrado() {
+
+        // Dado que eu esteja na página de registro
+        RegisterPage.acessarPagina();
+
+        // E informe um usuário com email já cadastrado
+        UserModel user = UserDataFactory.getPessoaValida();
+        RegisterPage.registrarUsuarioComSaldo(user.getEmail(), user.getName(), user.getPassword(), user.getPasswordConfirm());
+        RegisterPage.fecharModal();
+
+        // Quando eu registrar o usuário informado
+        RegisterPage.registrarUsuarioComSaldo(user.getEmail(), user.getName(), user.getPassword(), user.getPasswordConfirm());
+
+        // Então deve ser exibida a mensagem de erro
+        Assert.assertEquals(RegisterPage.getTextoModal(), "O email já está sendo usado.");
+
+    }
 }
