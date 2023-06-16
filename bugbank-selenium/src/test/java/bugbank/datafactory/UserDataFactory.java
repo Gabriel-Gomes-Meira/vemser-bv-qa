@@ -7,6 +7,7 @@ import org.testng.annotations.DataProvider;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 
 public class UserDataFactory {
@@ -21,6 +22,18 @@ public class UserDataFactory {
                 senha,
                 senha
         );
+    }
+
+    @DataProvider(name = "usuarioComEmailInvalido")
+    public static Object[][] getUsuarioComEmailInvalido() {
+        UserModel usuario = getPessoaValida();
+
+        return new Object[][] {{
+            UUID.randomUUID().toString(),
+            usuario.getName(),
+            usuario.getPassword(),
+            usuario.getPasswordConfirm()
+        }};
     }
 
     @DataProvider(name = "usuarioCamposVazios")

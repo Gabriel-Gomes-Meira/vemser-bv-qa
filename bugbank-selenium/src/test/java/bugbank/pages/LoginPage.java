@@ -3,6 +3,8 @@ package bugbank.pages;
 import com.beust.ah.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginPage extends BasePage {
 
@@ -13,6 +15,8 @@ public class LoginPage extends BasePage {
     private static final By campoEmailMensagem = By.cssSelector("div.card__login > form > div.input__child > p");
     private static final By botaoAcessar = By.cssSelector("div.login__buttons > button[type=submit]");
     private static final By botaoRegistrar = By.cssSelector("div.login__buttons > button[type=button]");
+    private static final By textoModal = By.id("modalText");
+    private static final By botaoFecharModal = By.id("btnCloseModal");
     //endregion
 
     //region FLUXOS
@@ -35,6 +39,7 @@ public class LoginPage extends BasePage {
 
     public static void preencherCampoSenha(String senha) {
         sendKeys(campoSenha, senha);
+        sendKeys(campoSenha, Keys.TAB);
     }
 
     public static void clicarBotaoAcessar() {
@@ -51,6 +56,11 @@ public class LoginPage extends BasePage {
 
     public static String getMensagemCampoSenha() {
         return getText(campoSenhaMensagem);
+    }
+
+    public static String getTextoModal() {
+        wait.until(ExpectedConditions.visibilityOfElementLocated(textoModal));
+        return getText(textoModal);
     }
     //endregion
 }

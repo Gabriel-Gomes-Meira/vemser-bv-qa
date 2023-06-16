@@ -83,6 +83,23 @@ public class RegisterTest extends BaseTest {
         Assert.assertTrue(UserDataFactory.validarMensagensDeErroEmCamposVazios(index));
     }
 
+    @Test(description = "Teste falhar ao registrar usuário com email inválido."
+            , dataProvider = "usuarioComEmailInvalido"
+            , dataProviderClass = UserDataFactory.class)
+    @Description("Descrição Teste: Validar falha ao registrar usuário com email inválido.")
+    public void testFalharRegistrarUsuarioComEmailInvalido(String email, String name, String password, String passwordConfirm) {
+
+        // Dado que eu esteja na página de registro
+        RegisterPage.acessarPagina();
+
+        // E informe um usuário com campos obrigatórios vazios
+        // Quando eu registrar o usuário informado
+        RegisterPage.registrarUsuarioComSaldo(email, name, password, passwordConfirm);
+
+        // Então deve ser exibida a mensagem de erro
+        Assert.assertEquals(RegisterPage.getMensagemDeEmail(), "Formato inválido");
+    }
+
     @Test(description = "Teste falhar ao registrar usuário com senhas diferentes.")
     @Description("Descrição Teste: Validar falha ao registrar usuário com senhas diferentes.")
     public void testFalharRegistrarUsuarioComSenhasDiferentes() {
@@ -101,7 +118,7 @@ public class RegisterTest extends BaseTest {
 
     @Test(description = "Teste falhar ao registrar usuário com email já cadastrado.")
     @Description("Descrição Teste: Validar falha ao registrar usuário com email já cadastrado.")
-    public void testFalharRegistrarUsuarioComEmailJaCadastrado() {
+    public void testFalharRegistrarUsuarioComEmailJaCadastrado() throws InterruptedException {
 
         // Dado que eu esteja na página de registro
         RegisterPage.acessarPagina();
@@ -118,4 +135,6 @@ public class RegisterTest extends BaseTest {
         Assert.assertEquals(RegisterPage.getTextoModal(), "O email já está sendo usado.");
 
     }
+
+
 }
