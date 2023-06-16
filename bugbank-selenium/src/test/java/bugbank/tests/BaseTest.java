@@ -1,11 +1,12 @@
 package bugbank.tests;
 
 import bugbank.util.Browser;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 
-public class BaseTest extends Browser {
+public abstract class BaseTest extends Browser{
 
     @BeforeMethod
     public void abrirNavegador() {

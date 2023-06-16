@@ -11,7 +11,7 @@ public class Browser {
     public static WebDriver driver;
     public static WebDriverWait wait;
 
-    public void browserUp(String url) {
+    public static void browserUp(String url) {
 
         System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
 
@@ -23,7 +23,7 @@ public class Browser {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
     }
 
-    public void browserDown() {
+    public static void browserDown() {
         driver.quit();
     }
 
