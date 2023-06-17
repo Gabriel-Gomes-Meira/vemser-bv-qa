@@ -27,5 +27,39 @@ ___
 4. Click no botão "Add to cart"
 5. Aguardar a mensagem de erro
 
-![image]()
-![image]()
+![antes](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/add_to_cart_without_quantity_17:04_17-06-2023%20(1).png?raw=true)
+![depois](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/add_to_cart_without_quantity_17:04_17-06-2023%20(2).png?raw=true)
+___
+
+
+### Bug Aumentar a quantidade de um produto no carrinho
+
+#### Pré-requisitos
+1. Ter um produto no carrinho
+2. Ter estoque disponível
+
+#### Passos
+1. Acessar a tela do carrinho
+2. Aumentar a quantidade do produto
+3. Aguardar atualização da quantidade
+
+![antes]()
+![depois]()
+![pos-refresh]()
+___
+
+
+### Bug Reduzir a quantidade de um produto no carrinho
+
+#### Pré-requisitos
+1. Ter um produto no carrinho com quantidade maior que 1
+
+#### Passos
+1. Acessar a tela do carrinho
+2. Aumentar a quantidade do produto
+3. Aguardar atualização da quantidade
+
+![antes]()
+![depois]()
+![pos-refresh]()
+___
