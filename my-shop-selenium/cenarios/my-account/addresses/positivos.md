@@ -15,7 +15,6 @@
 >**ENTÃO** devo ser redirecionado 
 >**E** devo visualizar o endereço atualizado na lista
 
-
 ### Remover endereço com sucesso [:arrow_right:](http://www.automationpractice.pl/index.php?controller=address)
 
 >**DADO** que eu esteja na tela de endereços <br>
