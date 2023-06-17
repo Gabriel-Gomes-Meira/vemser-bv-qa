@@ -43,9 +43,9 @@ ___
 2. Aumentar a quantidade do produto
 3. Aguardar atualização da quantidade
 
-![antes]()
-![depois]()
-![pos-refresh]()
+![antes](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/increment_quantity_of_product_on_cart_17:28_17-06-2023%20(1).png?raw=true)
+![depois](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/increment_quantity_of_product_on_cart_17:28_17-06-2023%20(2).png?raw=true)
+![pos-refresh](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/increment_quantity_of_product_on_cart_17:28_17-06-2023%20(3).png?raw=true)
 ___
 
 
@@ -59,7 +59,7 @@ ___
 2. Aumentar a quantidade do produto
 3. Aguardar atualização da quantidade
 
-![antes]()
-![depois]()
-![pos-refresh]()
+![antes](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/decrement_quantity_of_product_on_cart_17:29_17-06-2023%20(1)%20.png?raw=true)
+![depois](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/decrement_quantity_of_product_on_cart_17:29_17-06-2023%20(2).png?raw=true)
+![pos-refresh](https://github.com/Gabriel-Gomes-Meira/vemser-bv-qa/blob/main/my-shop-selenium/images/bugs/decrement_quantity_of_product_on_cart_17:29_17-06-2023%20(3).png?raw=true)
 ___
