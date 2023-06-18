@@ -13,7 +13,7 @@ public class Browser {
 
     public static void browserUp(String url) {
 
-        System.setProperty("webdriver.chrome.driver", "driver/chromedriver");
+        System.setProperty("webdriver.chrome.driver", "src/main/resources/driver/chromedriver");
 
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, Duration.ofSeconds(20, 1));

@@ -1,9 +1,10 @@
 package selenium;
 
-import bugbank.tests.BaseTest;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import tests.base.BaseTest;
 
 import java.util.List;
 
