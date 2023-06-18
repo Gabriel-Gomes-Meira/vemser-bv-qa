@@ -28,7 +28,7 @@ public class UserDatafactory {
             "Fulano",
             "de Tal",
             "15",
-            "06",
+            "6",
             "1990",
             true
         );
@@ -39,7 +39,7 @@ public class UserDatafactory {
         myUser.setFistName("Goularte");
         myUser.setLastName("Goncalves");
         myUser.setDayOfBirth("16");
-        myUser.setMonthOfBirth("07");
+        myUser.setMonthOfBirth("7");
         myUser.setYearOfBirth("1991");
         myUser.setMen(false);
         return myUser;

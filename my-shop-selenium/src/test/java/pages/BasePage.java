@@ -4,9 +4,13 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import selenium.Browser;
 import selenium.Elements;
+
+import java.util.List;
 
 
 public abstract class BasePage extends Elements {
@@ -51,7 +55,19 @@ public abstract class BasePage extends Elements {
         return getElement(by).getAttribute("value");
     }
 
+    public static String getSelectedValue(By by) {
+        waitElement(by);
+        Select select = new Select(getElement(by));
+        WebElement option = select.getFirstSelectedOption();
+        return option.getAttribute("value");
+    }
+
     public static void get(String url) {
         Browser.driver.get(url);
+    }
+
+    public static void accept() {
+        Browser.wait.until(ExpectedConditions.alertIsPresent());
+        Browser.driver.switchTo().alert().accept();
     }
 }

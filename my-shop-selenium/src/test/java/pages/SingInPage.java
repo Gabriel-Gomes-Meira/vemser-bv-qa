@@ -14,15 +14,15 @@ public class SingInPage extends BasePage {
     private static final By createAccountButton = By.id("SubmitCreate");
     private static final By creationAlertError = By.id("create_account_error");
     private static final By formCreateAccount = By.id("account-creation_form");
-    private static final By genderManRadioButton = By.id("id_gender1");
-    private static final By genderWomanRadioButton = By.id("id_gender2");
-    private static final By firstNameInput = By.id("customer_firstname");
-    private static final By lastNameInput = By.id("customer_lastname");
-    private static final By emailInput = By.id("email");
-    private static final By passwordInput = By.id("passwd");
-    private static final By daysSelect = By.id("days");
-    private static final By monthsSelect = By.id("months");
-    private static final By yearsSelect = By.id("years");
+    protected static final By genderManRadioButton = By.id("id_gender1");
+    protected static final By genderWomanRadioButton = By.id("id_gender2");
+    protected static final By firstNameInput = By.id("customer_firstname");
+    protected static final By lastNameInput = By.id("customer_lastname");
+    protected static final By emailInput = By.id("email");
+    protected static final By passwordInput = By.id("passwd");
+    protected static final By daysSelect = By.id("days");
+    protected static final By monthsSelect = By.id("months");
+    protected static final By yearsSelect = By.id("years");
     private static final By registerButton = By.id("submitAccount");
     private static final By formCreateAlertError = By.cssSelector("div.alert.alert-danger");
     //endregion
