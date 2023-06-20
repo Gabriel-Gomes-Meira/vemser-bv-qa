@@ -1,0 +1,16 @@
+{
+  "name": "bugbank-cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/bin/cypress run"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "cypress": "^12.14.0",
+    "cypress-plugin-tab": "^1.0.5"
+  }
+}
