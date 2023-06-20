@@ -1,3 +1,5 @@
 **/.idea
 **/target
 **.env
+**/node_modules
+**/cypress/videos
