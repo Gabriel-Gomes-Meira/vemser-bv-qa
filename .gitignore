@@ -1,5 +1,6 @@
 **/.idea
 **/target
-**.env
+**/.env
 **/node_modules
 **/cypress/videos
+**/yarn.lock
