@@ -5,7 +5,7 @@ import {
     getPessoaValida,
     getUsuarioComEmailInvalido,
     getUsuariosCamposVazios
-} from '../../pages/datafactory';
+} from '../../data/user-factory';
 
 describe('RegisterTest', () => {
   beforeEach(() => {
@@ -56,17 +56,21 @@ describe('RegisterTest', () => {
     HomePage.getSaldo().should('include', '0,00') 
   });
 
-  it('should fail to register user without filling required fields', () => {
-    // Dado que eu esteja na página de registro
+  
+  // Parametrized Test
+  getUsuariosCamposVazios().forEach((usuario) => {
+    
+    it(`should fail to register user ==> ${usuario.toString()}`, () => {
+      // Dado que eu esteja na página de registro
 
-    // E informe um usuário com campos obrigatórios vazios
-    getUsuariosCamposVazios().forEach((usuario) => {
-      RegisterPage.acessarPagina();
-      // Quando eu registrar o usuário informado
-      RegisterPage.registrarUsuarioComSaldo(usuario.email, usuario.name, usuario.password, usuario.passwordConfirm);
+      // E informe um usuário com campos obrigatórios vazios
       
-      // Então deve ser exibida a mensagem de erro
-      usuario.validate();
+        RegisterPage.acessarPagina();
+        // Quando eu registrar o usuário informado
+        RegisterPage.registrarUsuarioComSaldo(usuario.email, usuario.name, usuario.password, usuario.passwordConfirm);
+        
+        // Então deve ser exibida a mensagem de erro
+        usuario.validate();      
     });
 
   });

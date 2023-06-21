@@ -1,8 +1,10 @@
 
 export class HomePage {    
 
+    static saldo = 'p#textBalance > span'
+
     static getSaldo() {
-        return cy.get('p#textBalance > span').invoke('text');
+        return cy.get(this.saldo).invoke('text');
     }
 }
 
