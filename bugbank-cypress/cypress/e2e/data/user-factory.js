@@ -51,27 +51,27 @@ function getUsuariosCamposVazios() {
     const mensagemDePasswordConfirm = RegisterPage.getMensagemDePasswordConfirm;
 
     return [
-        new User('{del}', '{del}', '{del}', '{del}', 
-        () => {
-            mensagemDeEmail().should('eq', 'É campo obrigatório');
-            mensagemDeName().should('eq', 'É campo obrigatório')
-            mensagemDePassword().should('eq', 'É campo obrigatório');
-            mensagemDePasswordConfirm().should('eq', 'É campo obrigatório');
+        new User('{del}', '{del}', '{del}', '{del}',
+            () => {
+                mensagemDeEmail().should('eq', 'É campo obrigatório');
+                mensagemDeName().should('eq', 'É campo obrigatório')
+                mensagemDePassword().should('eq', 'É campo obrigatório');
+                mensagemDePasswordConfirm().should('eq', 'É campo obrigatório');
 
+            }),
+        new User('{del}', 'Random Person', '12345678', '12345678',
+            () => {
+                mensagemDeEmail().should('eq', 'É campo obrigatório')
+            }),
+        new User(faker.internet.email(), '{del}', '12345678', '12345678',
+            () => {
+                mensagemDeName().should('eq', 'É campo obrigatório')
+            }),
+        new User(faker.internet.email(), 'Random Person', '{del}', '12345678', () => {
+            mensagemDePassword().should('eq', 'É campo obrigatório')
         }),
-        new User('{del}', 'Random Person', '12345678', '12345678', 
-        () => {
-            mensagemDeEmail().should('eq', 'É campo obrigatório')
-        }),
-        new User (faker.internet.email(), '{del}', '12345678', '12345678', 
-        () => { 
-            mensagemDeName().should('eq', 'É campo obrigatório') 
-        }),      
-        new User(faker.internet.email(), 'Random Person', '{del}', '12345678', () => { 
-            mensagemDePassword().should('eq', 'É campo obrigatório') 
-        }),
-        new User(faker.internet.email(), 'Random Person', '12345678', '{del}', () => { 
-            mensagemDePasswordConfirm().should('eq', 'É campo obrigatório') 
+        new User(faker.internet.email(), 'Random Person', '12345678', '{del}', () => {
+            mensagemDePasswordConfirm().should('eq', 'É campo obrigatório')
         })
     ];
 }

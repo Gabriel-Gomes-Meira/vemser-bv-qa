@@ -1,4 +1,4 @@
-import {LoginPage} from '../../pages/login-page';
+import { LoginPage } from '../../pages/login-page';
 
 describe('LoginTest', () => {
 
@@ -6,7 +6,7 @@ describe('LoginTest', () => {
         LoginPage.acessarPagina();
     });
 
-    it('Validar falha de autenticação sem credenciais', () => {        
+    it('Validar falha de autenticação sem credenciais', () => {
 
         // Quando eu tentar fazer login sem informar credenciais
         LoginPage.logar('{del}', '{del}');

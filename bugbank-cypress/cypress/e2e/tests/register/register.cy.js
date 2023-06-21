@@ -1,13 +1,14 @@
-import {RegisterPage} from '../../pages/register-page'
-import {LoginPage} from '../../pages/login-page'
-import {HomePage} from '../../pages/home-page' 
+import { RegisterPage } from '../../pages/register-page'
+import { LoginPage } from '../../pages/login-page'
+import { HomePage } from '../../pages/home-page'
 import {
-    getPessoaValida,
-    getUsuarioComEmailInvalido,
-    getUsuariosCamposVazios
+  getPessoaValida,
+  getUsuarioComEmailInvalido,
+  getUsuariosCamposVazios
 } from '../../data/user-factory';
 
 describe('RegisterTest', () => {
+
   beforeEach(() => {
     RegisterPage.acessarPagina();
   });
@@ -23,15 +24,15 @@ describe('RegisterTest', () => {
 
     // Então deve ser exibida a mensagem de sucesso
     RegisterPage.getTextoModal().
-    should('include','foi criada com sucesso');
+      should('include', 'foi criada com sucesso');
     RegisterPage.fecharModal();
 
     // E devo conseguir fazer login com o usuário informado
     LoginPage.logar(user.email, user.password);
-    
+
     // E devo ter 1000 de saldo    
     cy.url().should('eq', 'https://bugbank.netlify.app/home');
-    HomePage.getSaldo().should('include', '1.000,00') 
+    HomePage.getSaldo().should('include', '1.000,00')
   });
 
   it('should register user without balance', () => {
@@ -45,32 +46,32 @@ describe('RegisterTest', () => {
 
     // Então deve ser exibida a mensagem de sucesso
     RegisterPage.getTextoModal()
-    .should('include','foi criada com sucesso');
+      .should('include', 'foi criada com sucesso');
     RegisterPage.fecharModal();
 
     // E devo conseguir fazer login com o usuário informado
     LoginPage.logar(user.email, user.password);
-    
+
     // E devo ter 0 de saldo
     cy.url().should('eq', 'https://bugbank.netlify.app/home');
-    HomePage.getSaldo().should('include', '0,00') 
+    HomePage.getSaldo().should('include', '0,00')
   });
 
-  
+
   // Parametrized Test
   getUsuariosCamposVazios().forEach((usuario) => {
-    
+
     it(`should fail to register user ==> ${usuario.toString()}`, () => {
       // Dado que eu esteja na página de registro
 
       // E informe um usuário com campos obrigatórios vazios
-      
-        RegisterPage.acessarPagina();
-        // Quando eu registrar o usuário informado
-        RegisterPage.registrarUsuarioComSaldo(usuario.email, usuario.name, usuario.password, usuario.passwordConfirm);
-        
-        // Então deve ser exibida a mensagem de erro
-        usuario.validate();      
+
+      RegisterPage.acessarPagina();
+      // Quando eu registrar o usuário informado
+      RegisterPage.registrarUsuarioComSaldo(usuario.email, usuario.name, usuario.password, usuario.passwordConfirm);
+
+      // Então deve ser exibida a mensagem de erro
+      usuario.validate();
     });
 
   });
@@ -113,4 +114,5 @@ describe('RegisterTest', () => {
     // Então deve ser exibida a mensagem de erro
     RegisterPage.getTextoModal().should('eq', 'O email já está sendo usado.');
   });
+
 });

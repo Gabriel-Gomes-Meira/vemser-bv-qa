@@ -1,4 +1,4 @@
- 
+
 
 export class RegisterPage {
 
@@ -17,7 +17,7 @@ export class RegisterPage {
     static mensagemDePassword = "div.card__register input[name='password'] + p";
     static mensagemDePasswordConfirm = "div.card__register input[name='passwordConfirmation'] + p";
 
-    
+
 
     static registrarUsuarioComSaldo(email, name, password, passwordConfirm) {
         this.abrirFormularioDeRegistro();
@@ -48,7 +48,7 @@ export class RegisterPage {
 
     static preencherCampoEmail(email) {
         cy.get(this.emailInput).type(email, {
-            force: true,            
+            force: true,
         });
     }
 
