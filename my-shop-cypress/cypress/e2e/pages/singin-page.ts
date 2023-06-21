@@ -99,7 +99,7 @@ export default class SingInPage {
             this.clickGenderWomanRadioButton();
 
         this.clickGenderManRadioButton();
-        this.fillFirstNameInput(userDTO.fistName);
+        this.fillFirstNameInput(userDTO.firstName);
         this.fillLastNameInput(userDTO.lastName);
         this.fillPasswordInput(userDTO.password);
         this.selectDay(userDTO.dayOfBirth);

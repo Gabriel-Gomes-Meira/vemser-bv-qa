@@ -91,45 +91,12 @@ export default class AddressPage extends MyAccountPage {
 
     static getSuccessAlert() {
         return cy.get(this.successAlert).invoke('text');
-    }
+    }    
 
     static findCrudButtonToAddress(alias: string, selector: string) {
-        let elementToReturn: Cypress.Chainable<JQuery<HTMLElement>> | null = null;
-
-        function findElementInRow(rows: JQuery<HTMLElement>, rowIndex: number) {
-            if (rowIndex >= rows.length) {
-                return null; // Return null if no more rows to search
-            }
-
-            const row = Cypress.$(rows[rowIndex]);
-
-            const elementPromises = row.find('div.address').map((index, element) => {
-                const pageSubheading = Cypress.$(element).find('h3.page-subheading');
-                const text = pageSubheading.text().trim().toLowerCase();
-
-                if (text === alias.toLowerCase()) {
-                    elementToReturn = cy.wrap(element).find(selector).first(); // Get the first matching child element
-                    return false; // Exit the loop early since we found the element
-                }
-
-                return null;
-            });
-
-            const elementPromiseArray = Array.from(elementPromises);
-
-            return Cypress.Promise.all(elementPromiseArray)
-                .then(() => {
-                    if (!elementToReturn) {
-                        return findElementInRow(rows, rowIndex + 1); // Recursively search in the next row
-                    }
-                });
-        }
-
-        return cy.get(this.rowAddress).then(rows => {
-            return findElementInRow(rows, 0).then(() => elementToReturn);
-        });
+        const h3_neigh = cy.get(this.rowAddress).find('h3.page-subheading').contains(alias);
+        return h3_neigh.parent().parent().find(selector);
     }
-
 
 
     static openFormUpdateAddress(alias: string) {
