@@ -31,7 +31,7 @@ export default class UserDatafactory {
 
     static getDefaultUserToUpdatePersonalInformation(): UserDTO {
         const myUser = UserDatafactory.getDefaultUser();
-        myUser.fistName = 'Goularte';
+        myUser.firstName = 'Goularte';
         myUser.lastName = 'Goncalves';
         myUser.dayOfBirth = '16';
         myUser.monthOfBirth = '7';
@@ -42,7 +42,7 @@ export default class UserDatafactory {
 
     static getDefaultUserToUpdateEmail(): UserDTO {
         const myUser = UserDatafactory.getDefaultUser();
-        myUser.email = 'second.email@email.com';
+        myUser.email = 'second.email222@email.com';
         return myUser;
     }
 

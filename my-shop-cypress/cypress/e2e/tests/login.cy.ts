@@ -1,6 +1,6 @@
 import UserDTO from '../data/dto/user-dto';
 import LoginPage from '../pages/login-page';
-import UserDatafactory from '../data/factory/user-datafactory';
+import UserDatafactory from '../data/factory/user-factory';
 
 describe('LoginTest', () => {
 

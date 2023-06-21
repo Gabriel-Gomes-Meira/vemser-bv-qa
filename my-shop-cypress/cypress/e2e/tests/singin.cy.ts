@@ -1,5 +1,5 @@
 import SingInPage from '../pages/singin-page';
-import UserDatafactory from '../data/factory/user-datafactory';
+import UserDatafactory from '../data/factory/user-factory';
 
 describe('SingInTest', () => {
 
